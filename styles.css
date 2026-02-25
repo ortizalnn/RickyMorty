@@ -1,0 +1,191 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Verdana', sans-serif;
+}
+
+/* BODY - FONDO UNIVERSO */
+body {
+  background: linear-gradient(135deg, #1e1f38, #2c2e50);
+  color: #f0f0f0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #a3ffb1;
+  text-shadow: 0 0 8px #a3ffb1;
+}
+
+header input {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #a3ffb1;
+  background-color: #2c2e50;
+  color: #f0f0f0;
+}
+
+header input::placeholder {
+  color: #88d9b0;
+}
+
+header button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff80b3;
+  color: #1e1f38;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+header button:hover {
+  background-color: #ff4d91;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* TARJETA DE PERSONAJE */
+.card {
+  background: linear-gradient(145deg, #2c2e50, #3b3d70);
+  border-radius: 16px;
+  width: 220px;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* PORTAL SUAVE ANIMADO */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle, #a3ffb1 0%, transparent 70%);
+  opacity: 0.15;
+  animation: pulsePortal 3s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes pulsePortal {
+  0% { transform: scale(1); opacity: 0.12; }
+  50% { transform: scale(1.05); opacity: 0.18; }
+  100% { transform: scale(1); opacity: 0.12; }
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(163, 255, 177, 0.35);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #a3ffb1;
+  margin: 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.card button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff80b3;
+  color: #1e1f38;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.card button:hover {
+  background-color: #ff4d91;
+  transform: scale(1.05);
+}
+
+/* DETALLES DEL PERSONAJE */
+.details {
+  text-align: center;
+  max-width: 450px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #2c2e50, #3b3d70);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(163, 255, 177, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+/* PORTAL SUAVE ANIMADO EN DETALLES */
+.details::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 20px;
+  background: radial-gradient(circle, #a3ffb1 0%, transparent 70%);
+  opacity: 0.2;
+  animation: pulsePortal 3s infinite alternate;
+  z-index: 0;
+}
+
+.details img {
+  width: 180px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.details button {
+  padding: 6px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff80b3;
+  color: #1e1f38;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.details button:hover {
+  background-color: #ff4d91;
+  transform: scale(1.05);
+}
+
+/* CLASE INVISIBLE */
+.invisible {
+  display: none;
+}
